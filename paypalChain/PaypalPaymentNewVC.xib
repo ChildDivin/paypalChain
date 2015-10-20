@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ROBOTO-REGULAR.TTF">
+            <string>Roboto-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PaypalPaymentNewVC">
+            <connections>
+                <outlet property="view" destination="iWj-WA-srG" id="eYb-FH-HBH"/>
+                <outlet property="webPaypal" destination="zgw-vP-h7f" id="IrF-iH-hbG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="iWj-WA-srG">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dYg-S1-UbM">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rgi-ge-Mmi">
+                            <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="44" id="aZv-Bm-4B6"/>
+                            </constraints>
+                            <state key="normal" image="btnback.png">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goBack" destination="zgw-vP-h7f" eventType="touchUpInside" id="Zwc-2v-DIc"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paypal Payment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9x-hO-V6f">
+                            <rect key="frame" x="100" y="12" width="119" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="Bmm-sr-ih2"/>
+                                <constraint firstAttribute="width" constant="119" id="uTI-Ge-Qb0"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
+                            <color key="textColor" red="0.45882352939999999" green="0.44705882349999998" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="seprator_line.png" translatesAutoresizingMaskIntoConstraints="NO" id="xDj-Lp-MMK">
+                            <rect key="frame" x="0.0" y="43" width="320" height="1"/>
+                            <color key="backgroundColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="UaZ-90-RQE"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="centerX" secondItem="D9x-hO-V6f" secondAttribute="centerX" id="8ac-lj-CJw"/>
+                        <constraint firstAttribute="bottom" secondItem="xDj-Lp-MMK" secondAttribute="bottom" id="D3K-a3-22C"/>
+                        <constraint firstAttribute="height" constant="44" id="Ioc-cU-6IS"/>
+                        <constraint firstItem="Rgi-ge-Mmi" firstAttribute="top" secondItem="dYg-S1-UbM" secondAttribute="top" id="Ipi-dY-eQe"/>
+                        <constraint firstItem="Rgi-ge-Mmi" firstAttribute="leading" secondItem="dYg-S1-UbM" secondAttribute="leading" id="PzU-h7-fbl"/>
+                        <constraint firstAttribute="centerY" secondItem="D9x-hO-V6f" secondAttribute="centerY" id="Qau-7X-DzD"/>
+                        <constraint firstAttribute="bottom" secondItem="Rgi-ge-Mmi" secondAttribute="bottom" id="Tpk-17-5Xh"/>
+                        <constraint firstItem="xDj-Lp-MMK" firstAttribute="leading" secondItem="dYg-S1-UbM" secondAttribute="leading" id="jMh-qc-POF"/>
+                        <constraint firstAttribute="trailing" secondItem="xDj-Lp-MMK" secondAttribute="trailing" id="wOa-6w-X0r"/>
+                    </constraints>
+                </view>
+                <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgw-vP-h7f">
+                    <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="NgC-KE-ylF"/>
+                    </connections>
+                </webView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zgw-vP-h7f" secondAttribute="bottom" id="AxJ-1E-v9u"/>
+                <constraint firstAttribute="trailing" secondItem="dYg-S1-UbM" secondAttribute="trailing" id="bMx-ln-Da2"/>
+                <constraint firstItem="zgw-vP-h7f" firstAttribute="leading" secondItem="iWj-WA-srG" secondAttribute="leading" id="elU-j3-dRb"/>
+                <constraint firstItem="dYg-S1-UbM" firstAttribute="leading" secondItem="iWj-WA-srG" secondAttribute="leading" id="gPD-to-Ls3"/>
+                <constraint firstAttribute="trailing" secondItem="zgw-vP-h7f" secondAttribute="trailing" id="kFE-2w-6vM"/>
+                <constraint firstItem="dYg-S1-UbM" firstAttribute="top" secondItem="iWj-WA-srG" secondAttribute="top" id="lS4-FA-p1p"/>
+                <constraint firstItem="zgw-vP-h7f" firstAttribute="top" secondItem="dYg-S1-UbM" secondAttribute="bottom" id="rRt-pp-Iih"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btnback.png" width="21" height="21"/>
+        <image name="seprator_line.png" width="262" height="1"/>
+    </resources>
+</document>
